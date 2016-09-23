@@ -4,10 +4,13 @@ c_engine::c_engine(void)
 {
 	if (SDL_Init(SDL_INIT_VIDEO) != 0)
 		error(-1, SDL_GetError());
-	if (!(this->window = new c_window))
+	if (!(this->window = new c_window()))
 		error(-1, "Unable to create window object.");
-	if (!(this->inputs = new s_inputs))
+	if (!(this->renderer = new c_renderer(this->window->get_window())))
+		error(-1, "Unable to create renderer object.");
+	if (!(this->inputs = new s_inputs()))
 		error(-1, "Unable to create inputs structure.");
+	IMG_Init(IMG_INIT_PNG);
 }
 
 c_engine::~c_engine(void)

@@ -11,13 +11,14 @@ SRC_FILES =	main.cpp			\
 			error.cpp			\
 			class_engine.cpp	\
 			class_window.cpp	\
+			class_renderer.cpp	\
 			class_events.cpp
 
 SRC =		$(addprefix $(SRC_DIR), $(SRC_FILES))
 
 OBJ =		$(SRC_FILES:.cpp=.o)
 
-LIB =		-lSDL2
+LIB =		-lSDL2 -lSDL2_image
 
 all: $(NAME)
 

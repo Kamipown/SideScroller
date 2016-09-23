@@ -10,5 +10,7 @@ private:
 public:
 	c_window(void);
 	~c_window(void);
+
+	SDL_Window	*get_window(void) { return (this->window); };
 	
 };

@@ -2,12 +2,14 @@
 
 #include "game.hpp"
 #include "class_window.hpp"
+#include "class_renderer.hpp"
 #include "class_events.hpp"
 
 class c_engine
 {
 private:
 	c_window	*window;
+	c_renderer	*renderer;
 	c_events	*events;
 
 	s_inputs	*inputs;
